@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.dashboard-header-container {
+    grid-column: 3/13;
+    grid-row: 1/2;
+    header {
+        background-color: $background-main;
+        @include flex(row, 2px, center, space-between);
+        padding: 2rem;
+        @include dimension($height: 100%);
+        color: $white;
+    }
+}
+
+.burger-menu {
+    @include flex(column, 2px);
+    cursor: pointer;
+}
+
+.burger-menu-dot {
+    @include dimension($width: 7px, $height: 7px);
+    background-color: $input-color;
+    @include border($radius: 50%);
+}

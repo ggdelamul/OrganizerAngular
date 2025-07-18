@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+
+.dashboard-right-element {
+    @include dimension($height: 100%);
+    background-color: $background-main;
+    grid-column: 4/5;
+    color: $white;
+    
+    
+}
+
+.right-element {
+    @include dimension($height: 100%);
+    @include flex(column, 3rem, center);
+    margin-top: 4rem;
+    li{
+        cursor: pointer;
+    }
+}

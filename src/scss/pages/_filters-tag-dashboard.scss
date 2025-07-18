@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+app-filter-tag {
+    .main-title {
+        margin-bottom: 3rem;
+    }
+}
+.accordeon-header {
+    @include flex(row, 0.5rem, center);
+}
+
+.accordeon-container {
+    @include flex(column, 3rem);
+}
+
+.accordeon-info > li {
+    margin-left: 1rem;
+}
+.filters-li {
+    @include flex(row, 0.5rem, center);
+}
+
+.task-status-card-input {
+    @include dimension($height: 150px, $width: 500px);
+    @include flex(column, 1rem);
+    min-height: 100px;
+    background-color: $darker-white;
+
+}

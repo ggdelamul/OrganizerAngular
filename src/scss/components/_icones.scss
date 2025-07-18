@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.round-icone-container {
+    @include dimension($height: 24px, $width: 24px);
+    // padding: 16px;
+    @include border($radius: 50%);
+    background-color: $white;
+}
+

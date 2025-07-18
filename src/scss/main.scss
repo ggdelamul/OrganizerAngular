@@ -1,0 +1,26 @@
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
+
+@use "components/buttons";
+@use "components/inputs";
+@use "components/icones";
+@use "components/images";
+@use "components/dropdown-menu";
+@use "components/card";
+@use "components/filters";
+@use "components/table";
+
+
+@use "layout/navbar";
+@use "layout/main-container";
+@use "layout/header";
+
+@use "pages/dashboard";
+@use "pages/task-dashboard";
+@use "pages/filters-tag-dashboard";
+@use "pages/finished-dashboard";
+@use "pages/documents-dashboard";

@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+@use "./buttons" as *;
+
+@mixin input-text($width, $background-color, $shadow: false) {
+    @include dimension($width: $width);
+    @include border($isbordervisible: false);
+    background-color: $background-color;
+    color: $black;
+    padding: 0 24px;
+    outline: none;
+}
+
+@mixin input-checkbox($width, $height, $background-color) {
+    @include dimension($width: $width, $height: $height);
+    background-color: $background-color;
+    color: $black;
+    @include border($radius: 50%);
+    cursor: pointer;
+}
+
+// @mixin input-checkbox($width, $height, $background-color, $border-color: $black, $border-width: 2px) {
+//     @include dimension($width: $width, $height: $height);
+//     background-color: $background-color;
+//     border: $border-width solid $border-color;
+//     @include border($color: $border-color, $width: $border-width, $radius: 50%);
+//     position: relative;
+//     cursor: pointer;
+//     box-sizing: border-box;
+
+//     &:checked {
+//         background-color: $primary;
+//     }
+
+//     &:checked::after {
+//         content: "";
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         width: calc(#{$width} / 2);
+//         height: calc(#{$height} / 2);
+//         background-color: $white;
+//         @include border($radius: 50%);
+//         transform: translate(-50%, -50%);
+//     }
+// }
+
+input[type="text"] {
+    @include input-text(100%, $input-color, $primary-50);
+}
+input[type="checkbox"] {
+    @include input-checkbox(24px, 24px, $white);
+}
+
+// input[type="text"]::placeholder {
+//     color: $primary-50;
+// }
+
+.input-text {
+    @include dimension($height: clamp(45px, 5vw, 55px), $width: 100%, $max-width: 438px);
+    background-color: $input-color;
+    @include border($radius: 30px, $isbordervisible: false);
+    @include flex(row, 2px, center, space-arround);
+    padding: 5px 10px;
+}
+
+.input-text-purple-placeholder::placeholder {
+    color: $primary-50;
+}
+
+.input-text.task-status-input {
+    @include border($radius: 0, $isbordervisible: false);
+}

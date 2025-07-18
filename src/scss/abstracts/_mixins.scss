@@ -1,0 +1,47 @@
+@use "./variables" as *;
+
+@mixin dimension($height: null, $width: null, $min-width: null, $max-width: null) {
+  @if $width {
+    width: $width;
+  }
+  @if $height {
+    height: $height;
+  }
+  @if $min-width {
+    min-width: $min-width;
+  }
+  @if $max-width {
+    max-width: $max-width;
+  }
+}
+
+@mixin flex($direction, $gap:null, $align:null, $justify:null) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin grid($columns, $rows: null, $gap: 0, $fr: 1fr) {
+  display: grid;
+  grid-template-columns: repeat($columns, $fr);
+  @if $rows {
+    grid-template-rows: repeat($rows, $fr);
+  }
+  gap: $gap;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 4px 4px rgba($black, 0.25);
+}
+
+@mixin border($color: null, $width: null, $radius: null, $isbordervisible: false) {
+  @if $isbordervisible {
+    border: solid $width $color;
+  } @else {
+    border: none;
+  }
+
+  border-radius: $radius;
+}

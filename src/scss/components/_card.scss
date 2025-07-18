@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+@mixin card {
+    background-color: $input-color;
+    @include border($radius: 20px);
+    @include flex(column);
+    padding: 1rem;
+}
+
+.card {
+    @include card;
+    @include dimension($min-width: 228px);
+}
+

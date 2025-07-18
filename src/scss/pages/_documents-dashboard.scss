@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+app-documents > .action-menu {
+    color: $black;
+}
+
+.upload-card {
+    min-height: 310px;
+}
+
+.upload-card {
+    @include flex(column, 1rem, center, center);
+}
+
+.upload-title-container {
+    @include flex(column, 0, center, center);
+    color: $secondary;
+}
+
+.upload-btn {
+    min-height: 44px;
+    @include dimension($width: 241px);
+    @include flex(row, 0.5rem, center, center);
+}
+
+.empty-upload {
+    width: 100%;
+    @include flex(row, 0, center, center);
+}
+
+.trash:hover {
+    cursor: pointer;
+}

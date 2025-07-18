@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.small-avatar-container {
+    @include dimension($width: 42px, $height: 42px);
+    @include border($radius: 50%);
+}
+.tiny-avatar-container {
+    @include dimension($width: 25px, $height: 25px);
+    @include border($radius: 50%);
+}
+
+
+.avatar {
+    object-fit: cover;
+    @include dimension($height: 100%, $width: 100%);
+    @include border($radius: 50%);
+}

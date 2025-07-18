@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.dashboard-container {
+    @include grid(12, 7, 0);
+    @include dimension(100vh, 100vw);
+}
+
+// app-agenda-container,
+// app-daily-tasks,
+// app-user-container,
+// app-documents,
+// app-filter-tag,
+// app-finished-tasks {
+//     width: 100%;
+//     @include grid(4, 0, 0);
+// }
+
+app-user-container {
+    width: 100%;
+    @include grid(4, 0, 0);
+}
