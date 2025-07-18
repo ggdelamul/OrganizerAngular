@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.dashboard-main-container {
+    @include dimension($height: 100%);
+   
+    background: $background-gradient;
+    grid-column: 3/13;
+    grid-row: 2/8;
+    align-items: end;
+}
+
+.content {
+    @include dimension($height: 100%);
+    // padding: 2rem;
+    hr {
+        margin: 1rem 0;
+    }
+    overflow-y: auto;
+}

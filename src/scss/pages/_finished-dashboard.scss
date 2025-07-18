@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+
+.col-icon {
+    @include flex(row, 0.5rem, center, center);
+}

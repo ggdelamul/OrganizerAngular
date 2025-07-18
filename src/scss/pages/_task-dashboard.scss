@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.task-container {
+    @include flex(row, 4rem);
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    margin-bottom: 5rem;
+}
+
+.main-title {
+    font-size: $font-size-big-title;
+}
+
+.title {
+    font-weight: $font-weight-bold;
+}
+
+.task-status-card {
+    @include dimension($height: 300px, $width: 500px);
+    min-height: 200px;
+}
+
+.delayed-postponed-container {
+    @include flex(row, 7rem);
+}
+
+.action-menu {
+    @include flex(row, 2rem, $justify: center);
+    color: $white;
+    margin-bottom: 3rem;
+    p {
+        cursor: pointer;
+    }
+}
+
+.task-header {
+    .title {
+        color: $white;
+    }
+    @include flex(row, 0, center, space-between);
+
+    margin-bottom: 4rem;
+}
+
+.see-more-btn {
+    background: transparent;
+    @include border($white, 1px, $isbordervisible: true);
+    font-weight: $font-weight-regular;
+}
+
+.todo-info-container {
+    @include flex(row, $align: center, $justify: space-between);
+    margin-bottom: 1rem;
+    div {
+        @include flex(row, 1rem);
+    }
+}

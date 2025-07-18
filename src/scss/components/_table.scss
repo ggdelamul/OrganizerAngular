@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+table {
+    // border-collapse: collapse;
+    @include dimension($width: 100%);
+    table-layout: fixed;
+    margin-top: 3rem;
+}
+thead th {
+    // @include border($white, 2px, $isbordervisible:true)
+    border-bottom: 2px $white solid;
+}
+
+thead,
+tbody {
+    th,
+    td {
+        text-align: center;
+        vertical-align: center;
+
+        // @include flex(row, $justify: space-between);
+    }
+}
