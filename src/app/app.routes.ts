@@ -5,6 +5,7 @@ import { FinishedTasksComponent } from './pages/finished-tasks/finished-tasks.co
 import { FilterTagComponent } from './pages/filter-tag/filter-tag.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { UserContainerComponent } from './pages/User/user-list/user-container.component';
+import { AddUserComponent } from './pages/User/add-user/add-user.component';
 
 export const routes: Routes = [
   {
@@ -38,4 +39,12 @@ export const routes: Routes = [
     component: UserContainerComponent,
     title: 'users',
   },
+
+  {
+    path: 'users/add', 
+    component: AddUserComponent,
+    title: 'Ajouter un utilisateur'
+
+  }
 ];
+
