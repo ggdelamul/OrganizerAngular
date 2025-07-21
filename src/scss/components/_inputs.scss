@@ -72,3 +72,7 @@ input[type="checkbox"] {
 .input-text.task-status-input {
     @include border($radius: 0, $isbordervisible: false);
 }
+
+.input-error {
+    color: $error;
+}
