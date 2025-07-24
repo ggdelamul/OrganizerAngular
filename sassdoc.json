@@ -1,0 +1,16 @@
+{
+  "dest": "sassdoc",
+  "verbose": true,
+  "display": {
+    "access": ["public"],
+    "alias": true,
+    "watermark": true
+  },
+  "groups": {
+    "undefined": "Autres",
+    "colors": "Couleurs",
+    "mixins": "Mixins",
+    "functions": "Fonctions",
+    "placeholders": "Placeholders"
+  }
+}
