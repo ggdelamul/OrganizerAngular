@@ -1,0 +1,62 @@
+/// Variables de couleurs
+/// ======================
+
+/// Couleur principale utilisée pour les boutons.
+/// @type Color
+/// @group colors
+$primary-color: #3498db;
+
+/// Couleur secondaire utilisée pour les arrière-plans.
+/// @type Color
+/// @group colors
+$secondary-color: #f2f2f2;
+
+/// Taille de base de la police
+/// @type Number
+/// @group typography
+$base-font-size: 16px;
+
+
+/// Mixins réutilisables
+/// ======================
+
+/// Crée un bouton avec une couleur personnalisée.
+/// @group components
+/// @access public
+/// @param {Color} $bg - La couleur de fond
+/// @param {Color} $text - La couleur du texte
+/// @example scss - Utilisation simple
+///   .btn {
+///     @include button(#3498db, white);
+///   }
+@mixin button($bg, $text) {
+  background-color: $bg;
+  color: $text;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+
+/// Fonctions utilitaires
+/// ======================
+
+/// Fonction pour assombrir une couleur.
+/// @group functions
+/// @param {Color} $color - La couleur à assombrir
+/// @param {Number} $amount - Pourcentage d’assombrissement (0% à 100%)
+/// @return {Color} Couleur assombrie
+@function darken-color($color, $amount) {
+  @return darken($color, $amount);
+}
+
+
+/// Placeholders
+/// ======================
+
+/// Placeholder pour un container centré avec largeur fixe.
+/// @group layout
+%centered-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
