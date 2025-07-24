@@ -42,21 +42,40 @@ export class UserService {
     return `${this.baseURL}/${UserId}`;
   });
 
-  async deleteOneUser(user: string | null) {
+  async addUser(newUser: IUser) {
+    try {
+      const response = await fetch(`${this.baseURL}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
 
-      try {
-        const response = await fetch(`${this.baseURL}/${user}`, {
-          method: 'DELETE',
-        });
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP ! statut : ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error(`Error lors de la requête : ${error}`);
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP ! statut : ${response.status}`);
       }
-    };
+
+      const data = await response.json();
+      console.log('Utilisateur ajouté avec succès :', data);
+    } catch (error) {
+      console.error('Erreur lors de la requête :', error);
+    }
   }
 
+  async deleteOneUser(user: string | null) {
+    try {
+      const response = await fetch(`${this.baseURL}/${user}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(`Error lors de la requête : ${error}`);
+    }
+  }
+}
