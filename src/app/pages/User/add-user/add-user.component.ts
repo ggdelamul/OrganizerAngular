@@ -33,7 +33,7 @@ import { forbiddenNameValidator } from '../../../shared/validators/forbiddenName
         </p>
         } @if( lnameerror?.hasError('forbiddenName')){
 
-        <p class="input-error">le nom ne doit pas contenir ce mot.</p>
+        <p class="input-error">le nom ne doit pas contenir ce mot: "{{lnameerror?.errors?.['forbiddenName'].value}}"</p>
         } }
       </div>
 
@@ -55,7 +55,7 @@ import { forbiddenNameValidator } from '../../../shared/validators/forbiddenName
         </p>
         } @if( fnameerror?.hasError('forbiddenName')){
 
-        <p class="input-error">le prénom ne doit pas contenir ce mot.</p>
+        <p class="input-error">le prénom ne doit pas contenir ce mot: "{{fnameerror?.errors?.['forbiddenName'].value}}"</p>
         } }
       </div>
 

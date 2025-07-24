@@ -41,4 +41,22 @@ export class UserService {
     if (!UserId) return undefined;
     return `${this.baseURL}/${UserId}`;
   });
-}
+
+  async deleteOneUser(user: string | null) {
+
+      try {
+        const response = await fetch(`${this.baseURL}/${user}`, {
+          method: 'DELETE',
+        });
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error(`Error lors de la requête : ${error}`);
+      }
+    };
+  }
+

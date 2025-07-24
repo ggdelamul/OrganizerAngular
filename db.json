@@ -1,12 +1,6 @@
 {
   "user": [
     {
-      "id": "user1",
-      "nom": "Doe",
-      "prenom": "John",
-      "telephone": "0123456789"
-    },
-    {
       "id": "user2",
       "nom": "Smith",
       "prenom": "Emma",
@@ -47,12 +41,6 @@
       "nom": "Garcia",
       "prenom": "Tom",
       "telephone": "0612789456"
-    },
-    {
-      "id": "user9",
-      "nom": "Lopez",
-      "prenom": "Nina",
-      "telephone": "0645123987"
     },
     {
       "id": "user10",
@@ -143,12 +131,6 @@
       "nom": "Brun",
       "prenom": "Yanis",
       "telephone": "0610101010"
-    },
-    {
-      "id": "user25",
-      "nom": "Roy",
-      "prenom": "Anna",
-      "telephone": "0689898989"
     },
     {
       "id": "user26",

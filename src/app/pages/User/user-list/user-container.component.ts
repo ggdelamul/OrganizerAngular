@@ -20,6 +20,7 @@ import { UserElementComponent } from '../user-element/user-element.component';
     <app-user-list
       [userList]="users()"
       (selectedIdfromList)="selectedId($event)"
+      (idToDelfromList)="deleteUser($event)"
     />
     <app-user-detail
       class="dashboard-right-element"
@@ -38,6 +39,10 @@ export class UserContainerComponent {
   selectedId(id: string | null) {
     const selectedId = this.userService.setUserId(id);
     console.log(selectedId(), 'from container');
+  }
+
+  deleteUser(id: string | null) {
+    this.userService.deleteOneUser(id);
   }
 
   selectedUser = this.userService.getOneUserResources.value;

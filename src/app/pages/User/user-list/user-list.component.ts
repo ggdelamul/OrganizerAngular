@@ -27,6 +27,7 @@ import { UserElementComponent } from '../user-element/user-element.component';
       <app-user-element
         [userElement]="user"
         (selectedIdfromEl)="selectedIdfromList.emit($event)"
+        (idToDelfromEl)="idToDelfromList.emit($event)"
       />
       }
     </ul>
@@ -41,6 +42,7 @@ export class UserListComponent {
   userList = input<IUser[]>();
 
   selectedIdfromList = output<string | null>();
+  idToDelfromList = output<string | null>();
 
   isSort = signal<boolean>(false);
 
