@@ -2,6 +2,19 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+/// Génère un bouton avec dimensions, couleurs, et option d’ombre portée.
+/// Utilise les mixins `dimension()` et `box-shadow()`.
+/// @param {Length} $height - Hauteur du bouton (ex: `clamp(35px, 5vw, 45px)`).
+/// @param {Length} $width - Largeur du bouton (ex: `100%`).
+/// @param {Length|Null} $max-width - Largeur maximale du bouton. Optionnel.
+/// @param {Color} $background-color - Couleur de fond du bouton.
+/// @param {Color} $text-color - Couleur du texte du bouton.
+/// @param {Boolean} $shadow - Applique une ombre si `true`. Par défaut : `false`.
+/// @group Components
+/// @example scss - Bouton violet sur fond clair
+///   .my-button {
+///     @include button(45px, 100%, 160px, $primary, $white, true);
+///   }
 @mixin button($height, $width, $max-width: null, $background-color, $text-color, $shadow: false) {
     @include dimension($height: $height, $width: $width, $max-width: $max-width);
     background-color: $background-color;
@@ -23,6 +36,7 @@
     // }
 }
 
+///Style de base des boutons
 button {
     @include button(clamp(35px, 5vw, 45px), 100%, 163px, $background-main, $darker-white, false);
     @include border($radius: 30px);
@@ -37,13 +51,17 @@ button {
     }
 }
 
+///Style de base des boutons large
 .btn-large {
     @include dimension($height: clamp(25px, 5vw, 29px), $width: 100%, $max-width: 411px);
 }
+
+///Style de base des petits boutons
 .btn-small {
     @include dimension($height: clamp(25px, 5vw, 29px), $width: 100%, $max-width: 87px);
 }
 
+///Style de base des buttons à bord rectangulaire
 .btn-rectangle {
     @include dimension($height: clamp(35px, 5vw, 42px), $width: 100%, $max-width: 134px);
     @include border($radius: 10px);

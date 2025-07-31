@@ -7,10 +7,13 @@ app-filter-tag {
         margin-bottom: 3rem;
     }
 }
+
+///Menu de la page de la listes des tâches 
 .accordeon-header {
     @include flex(row, 0.5rem, center);
 }
 
+///Container de la liste de tâche 
 .accordeon-container {
     @include flex(column, 3rem);
 }
@@ -18,10 +21,13 @@ app-filter-tag {
 .accordeon-info > li {
     margin-left: 1rem;
 }
+
+
 .filters-li {
     @include flex(row, 0.5rem, center);
 }
 
+///Input de déscription des tâches
 .task-status-card-input {
     @include dimension($height: 150px, $width: 500px);
     @include flex(column, 1rem);

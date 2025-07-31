@@ -1,26 +1,54 @@
 /// Couleur principale utilisée pour les éléments interactifs.
 /// @type Color
-/// @group colors
+/// @group abstract
 $primary: #9747ff;
 
-
+/// Couleur principale avec 50% d'oppacité, utilisée sur le texte de certains placeholder.
+/// @type Color
+/// @group abstract
 $primary-50: rgba($primary, 0.5);
+
+/// Couleurs secondaire utilisée principalement sur certaines icones
+/// @type Color
+/// @group abstract
 $secondary: #6a1bda;
 
-//background Color
+/// Fond dégradé.
+/// @type Value
+/// @group abstract
 $background-gradient: no-repeat linear-gradient(#68509c, #f5f5f5);
-$background-gray: #dedede;
+
+/// Couleur de fond principale utiliser sur les layouts et certains éléments intéractifs (layouts, buttons, etc...).
+/// @type Color
+/// @group abstract
 $background-main: #32398e;
 
-//input Colors
+/// Couleur de fond des inputs
+/// @type Color
+/// @group abstract
 $input-color: #e0dede;
 
-//Texte Colors
+/// Couleur noir, utilisée pour le texte
+/// @type Color
+/// @group abstract
 $black: #000000;
+
+/// Couleur noir avec 58% d'opacité, utilisée pour certains placeholders
+/// @type Color
+/// @group abstract
 $black-58: rgba($black, 0.58);
-// $gray: #f6e8e8;
+
+/// Couleur blanche, utilisée pour le texte
+/// @type Color
+/// @group abstract
 $white: #ffffff;
+
+/// Couleur blanche un peu plus foncé, utilisée pour le texte de certains boutons et fond de certaines cards
+/// @type Color
+/// @group abstract
 $darker-white: #fffdfd;
 
-//Etat Colors
+/// Couleur indiquants les erreurs
+/// @type Color
+/// @group abstract
 $error: #ff0000;

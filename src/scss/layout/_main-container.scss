@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+
+///Défini le style du container principal du dashboard
 .dashboard-main-container {
     @include dimension($height: 100%);
    
@@ -11,6 +13,7 @@
     align-items: end;
 }
 
+///Class qui défini l'endroit où sera posé le contenu changeant du dashboard
 .content {
     @include dimension($height: 100%);
     // padding: 2rem;

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { IUser } from '../../../shared/Interfaces/IUser';
 import { UserElementComponent } from '../user-element/user-element.component';
-
+import { userPagination } from '../../../shared/pagination/Pagination';
 @Component({
   selector: 'app-user-list',
   imports: [UserElementComponent],
@@ -16,6 +16,8 @@ import { UserElementComponent } from '../user-element/user-element.component';
     @let u = sortByName();
 
     <button (click)="setIsSort()">Trier par nom</button>
+    <button>< Précedent</button>
+    <button (click)="nextUserList()">Suivant ></button>
     <ul>
       <li>
         <p>Nom</p>
@@ -49,6 +51,7 @@ export class UserListComponent {
   constructor() {
     effect(() => {
       // console.log(this.isSort());
+      console.log('La pagination: ' + this.paginateNbr());
     });
   }
 
@@ -60,15 +63,36 @@ export class UserListComponent {
 
   sortByName = computed(() => {
     if (!this.isSort()) {
-      return this.userList();
+      return this.tenUserList();
     } else {
       const sortedList: IUser[] | undefined = [];
 
-      this.userList()?.forEach((user: IUser) => sortedList.push(user));
+      this.tenUserList()?.forEach((user: IUser) => sortedList.push(user));
 
       return sortedList.sort((a: IUser, b: IUser) =>
         a.nom.localeCompare(b.nom)
       );
     }
   });
+
+  //Pagination
+  // pagetest = 1;
+  // usersPaginated = signal<IUser[]>([]);
+  // pagination() {
+  //   this.usersPaginated.update(() =>
+  //     userPagination(this.userList(), this.pagetest)
+  //   );
+  // }
+
+  paginateNbr = signal(10);
+
+  tenUserList(offset: number = 0) {
+    return this.userList()?.slice(offset, this.paginateNbr());
+  }
+
+  nextUserList() {
+    const offset: number = this.paginateNbr();
+    this.paginateNbr.update((value) => value + 10);
+    this.tenUserList(offset);
+  }
 }

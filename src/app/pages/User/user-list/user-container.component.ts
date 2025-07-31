@@ -13,6 +13,7 @@ import { UserService } from '../../../shared/services/user.service';
 import { IUser } from '../../../shared/Interfaces/IUser';
 import { UserElementComponent } from '../user-element/user-element.component';
 
+
 @Component({
   selector: 'app-user-container',
   imports: [UserListComponent, UserDetailComponent],
@@ -31,6 +32,7 @@ import { UserElementComponent } from '../user-element/user-element.component';
 })
 export class UserContainerComponent {
   userService = inject(UserService);
+
   users = computed(() => {
     return this.userService.usersResources.value();
   });
@@ -46,4 +48,5 @@ export class UserContainerComponent {
   }
 
   selectedUser = this.userService.getOneUserResources.value;
+
 }

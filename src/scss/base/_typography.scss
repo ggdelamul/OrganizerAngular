@@ -1,27 +1,101 @@
 //Variables
-$default-font-family:  "Nunito Sans", sans-serif;
 
+/// Police principale utilisée dans l’interface.
+/// @type Font
+/// @group Typography
+$default-font-family: "Nunito Sans", sans-serif;
+
+/// Texte normal.
+/// @type Number
+/// @group Typography
 $font-weight-regular: 400;
+
+/// Texte semi-gras.
+/// @type Number
+/// @group Typography
 $font-weight-semibold: 600;
+
+/// Texte gras.
+/// @type Number
+/// @group Typography
 $font-weight-bold: 700;
+
+/// Texte extra-gras
+/// @type Number
+/// @group Typography
 $font-weight-extrabold: 800;
+
+/// Texte très gras.
+/// @type Number
+/// @group Typography
 $font-weight-heavybold: 900;
 
-$font-size-small: clamp(0.8125rem, 1vw, 0.875rem); 
+/// Petite taille de texte, utilisée pour les légendes.
+/// @type Length
+/// @group Typography
+$font-size-small: clamp(0.8125rem, 1vw, 0.875rem);
+
+/// Taille de base pour le corps de texte.
+/// @type Length
+/// @group Typography
 $font-size-base: clamp(0.9375rem, 1.2vw, 1rem);
+
+/// Taille pour les titres (niveau 4).
+/// @type Length
+/// @group Typography
 $font-size-title: clamp(1.125rem, 2vw, 1.25rem);
+
+/// Grand titre (niveau 3).
+/// @type Length
+/// @group Typography
 $font-size-big-title: clamp(1.25rem, 2.5vw, 1.5rem);
+
+/// Titre principal (niveau 2).
+/// @type Length
+/// @group Typography
 $font-size-heading: clamp(1.5rem, 3vw, 1.875rem);
+
+/// Très grand titre (niveau 1).
+/// @type Length
+/// @group Typography
 $font-size-big-heading: clamp(2rem, 4vw, 2.5rem);
 
+/// Hauteur de ligne petite.
+/// @type Number
+/// @group Typography
 $line-height-small: 1.5;
+
+/// Hauteur de ligne par défaut.
+/// @type Number
+/// @group Typography
 $line-height-base: 1.6;
+
+/// Hauteur de ligne pour titres.
+/// @type Number
+/// @group Typography
 $line-height-title: 1.4;
+
+/// Hauteur de ligne pour headings.
+/// @type Number
+/// @group Typography
 $line-height-heading: 1.3;
+
+/// Hauteur de ligne pour grands headings.
+/// @type Number
+/// @group Typography
 $line-height-big-heading: 1.2;
 
-@mixin text-style($font-size, $line-height, $font-weight:$font-weight-regular, $font-family: $default-font-family)
-{
+/// Applique une combinaison de styles de texte : taille, graisse, interligne et police.
+/// @param {Length} $font-size - Taille de la police.
+/// @param {Number} $line-height - Hauteur de ligne.
+/// @param {Number} $font-weight - Graisse du texte. Par défaut : `$font-weight-regular`.
+/// @param {Font} $font-family - Famille de police. Par défaut : `$default-font-family`.
+/// @group base
+/// @example scss - Utilisation classique
+///   h1 {
+///     @include text-style($font-size-heading, $line-height-heading, $font-weight-bold);
+///   }
+@mixin text-style($font-size, $line-height, $font-weight: $font-weight-regular, $font-family: $default-font-family) {
     font-size: $font-size;
     font-weight: $font-weight;
     line-height: $line-height;
@@ -29,29 +103,30 @@ $line-height-big-heading: 1.2;
 }
 
 body {
-     @include text-style($font-size-base, $line-height-base, $font-weight-regular);
+    @include text-style($font-size-base, $line-height-base, $font-weight-regular);
 }
 
-p,li {
-     @include text-style($font-size-base, $line-height-base, $font-weight-regular);
+p,
+li {
+    @include text-style($font-size-base, $line-height-base, $font-weight-regular);
 }
 
 button {
-     @include text-style($font-size-base, $line-height-base, $font-weight-semibold);
+    @include text-style($font-size-base, $line-height-base, $font-weight-semibold);
 }
 
-h1{
+h1 {
     @include text-style($font-size-big-heading, $line-height-big-heading, $font-weight-bold);
 }
 
-h2{
+h2 {
     @include text-style($font-size-heading, $line-height-heading, $font-weight-bold);
 }
 
-h3{
+h3 {
     @include text-style($font-size-big-title, $line-height-title, $font-weight-extrabold);
 }
 
-h4{
+h4 {
     @include text-style($font-size-title, $line-height-title, $font-weight-bold);
 }

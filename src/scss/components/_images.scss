@@ -2,16 +2,21 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+
+///container des petits avatars
 .small-avatar-container {
     @include dimension($width: 42px, $height: 42px);
     @include border($radius: 50%);
 }
+
+
+///container des tout petits avatars
 .tiny-avatar-container {
     @include dimension($width: 25px, $height: 25px);
     @include border($radius: 50%);
 }
 
-
+///Style des images avatars
 .avatar {
     object-fit: cover;
     @include dimension($height: 100%, $width: 100%);

@@ -2,6 +2,14 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+/// Style de base pour une carte : fond, rayon, flexbox colonne et padding.
+/// Utilise les mixins `border()` et `flex()`.
+/// @group Components
+/// @example scss - Utilisation de la carte
+///   .card {
+///     @include card;
+///     @include dimension($min-width: 228px);
+///   }
 @mixin card {
     background-color: $input-color;
     @include border($radius: 20px);
@@ -9,8 +17,8 @@
     padding: 1rem;
 }
 
+///Style de base des cards 
 .card {
     @include card;
     @include dimension($min-width: 228px);
 }
-

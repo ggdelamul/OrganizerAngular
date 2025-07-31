@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+///Style de bases des tableaux
 table {
     // border-collapse: collapse;
     @include dimension($width: 100%);

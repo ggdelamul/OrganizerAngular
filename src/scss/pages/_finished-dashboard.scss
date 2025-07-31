@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
-
+///Icon dées tâches terminés 
 .col-icon {
     @include flex(row, 0.5rem, center, center);
 }

@@ -3,6 +3,15 @@
 @use "../base/typography" as *;
 @use "./buttons" as *;
 
+/// Applique les styles d'un input de type texte.
+/// - Couleur de fond personnalisable
+/// - Possibilité d'ajouter une ombre via un autre mixin
+/// - Padding horizontal par défaut (24px)
+///
+/// @param {Length} $width - Largeur de l’input (ex. `100%`, `200px`, etc.)
+/// @param {Color} $background-color - Couleur de fond de l’input
+/// @param {Boolean} $shadow [false] - Active ou non l’ombre portée (non utilisé ici mais prévu)
+/// @group components
 @mixin input-text($width, $background-color, $shadow: false) {
     @include dimension($width: $width);
     @include border($isbordervisible: false);
@@ -12,6 +21,14 @@
     outline: none;
 }
 
+/// Applique les styles d'une checkbox.
+/// - Forme circulaire (`border-radius: 50%`)
+/// - Curseur pointeur
+///
+/// @param {Length} $width - Largeur de la checkbox
+/// @param {Length} $height - Hauteur de la checkbox
+/// @param {Color} $background-color - Couleur de fond de la checkbox
+/// @group components
 @mixin input-checkbox($width, $height, $background-color) {
     @include dimension($width: $width, $height: $height);
     background-color: $background-color;
@@ -46,9 +63,13 @@
 //     }
 // }
 
+
+///Style de base des inputs de type texte
 input[type="text"] {
     @include input-text(100%, $input-color, $primary-50);
 }
+
+///Style de base des inputs de type checkbox
 input[type="checkbox"] {
     @include input-checkbox(24px, 24px, $white);
 }
@@ -57,6 +78,7 @@ input[type="checkbox"] {
 //     color: $primary-50;
 // }
 
+///container qui contient un input de type texte et une icone (optionnel)
 .input-text {
     @include dimension($height: clamp(45px, 5vw, 55px), $width: 100%, $max-width: 438px);
     background-color: $input-color;
@@ -73,6 +95,8 @@ input[type="checkbox"] {
     @include border($radius: 0, $isbordervisible: false);
 }
 
+
+///couleur du texte lors d'une erreur de formulaire
 .input-error {
     color: $error;
 }

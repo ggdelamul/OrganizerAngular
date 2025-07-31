@@ -8,9 +8,6 @@ app-documents > .action-menu {
 
 .upload-card {
     min-height: 310px;
-}
-
-.upload-card {
     @include flex(column, 1rem, center, center);
 }
 
@@ -19,12 +16,14 @@ app-documents > .action-menu {
     color: $secondary;
 }
 
+///Button pour afficher les options pour téléverser des documents
 .upload-btn {
     min-height: 44px;
     @include dimension($width: 241px);
     @include flex(row, 0.5rem, center, center);
 }
 
+///Zone vide qui contiendra le menu déroulant des options
 .empty-upload {
     width: 100%;
     @include flex(row, 0, center, center);

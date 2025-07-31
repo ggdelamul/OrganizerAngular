@@ -1,5 +1,16 @@
 @use "./variables" as *;
 
+/// Applique des dimensions personnalisées à un élément, si elles sont définies.
+/// Les valeurs nulles sont ignorées.
+/// @param {Length|Null} $height - La hauteur de l’élément (ex : `100px`, `auto`). Optionnel.
+/// @param {Length|Null} $width - La largeur de l’élément. Optionnel.
+/// @param {Length|Null} $min-width - La largeur minimale. Optionnel.
+/// @param {Length|Null} $max-width - La largeur maximale. Optionnel.
+/// @group abstract
+/// @example scss - Utilisation classique
+///   .card {
+///     @include dimension(100px, 200px, 150px, 300px);
+///   }
 @mixin dimension($height: null, $width: null, $min-width: null, $max-width: null) {
   @if $width {
     width: $width;
@@ -15,7 +26,17 @@
   }
 }
 
-@mixin flex($direction, $gap:null, $align:null, $justify:null) {
+/// Crée un conteneur flex avec direction, alignement, espacement et justification personnalisables.
+/// @param {String} $direction - La direction des éléments (`row`, `column`, etc.).
+/// @param {Length|Null} $gap - L'espacement entre les éléments (par ex. `1rem`, `10px`). Optionnel.
+/// @param {String|Null} $align - L'alignement vertical (`center`, `flex-start`, etc.). Optionnel.
+/// @param {String|Null} $justify - L'alignement horizontal (`center`, `space-between`, etc.). Optionnel.
+/// @group abstract
+/// @example scss - Utilisation de base
+///   .container {
+///     @include flex(row, 1rem, center, space-between);
+///   }
+@mixin flex($direction, $gap: null, $align: null, $justify: null) {
   display: flex;
   flex-direction: $direction;
   gap: $gap;
@@ -23,6 +44,16 @@
   justify-content: $justify;
 }
 
+/// Crée un conteneur grid avec un nombre de colonnes et lignes personnalisable.
+/// @param {Number} $columns - Nombre de colonnes du grid.
+/// @param {Number|Null} $rows - Nombre de lignes. Optionnel.
+/// @param {Length} $gap - Espacement entre les lignes et colonnes. Par défaut : `0`.
+/// @param {String} $fr - Unité de fraction utilisée dans `repeat()`. Par défaut : `1fr`.
+/// @group abstract
+/// @example scss - Grid simple
+///   .container {
+///     @include grid(3, 2, 1rem);
+///   }
 @mixin grid($columns, $rows: null, $gap: 0, $fr: 1fr) {
   display: grid;
   grid-template-columns: repeat($columns, $fr);
@@ -32,10 +63,26 @@
   gap: $gap;
 }
 
+/// Applique une ombre portée par défaut.
+/// @group abstract
+/// @example scss - Ombre classique
+///   .card {
+///     @include box-shadow;
+///   }
 @mixin box-shadow {
   box-shadow: 0 4px 4px rgba($black, 0.25);
 }
 
+/// Applique une bordure personnalisée si visible, avec arrondies facultatif.
+/// @param {Color|Null} $color - Couleur de la bordure. Optionnel.
+/// @param {Length|Null} $width - Épaisseur de la bordure. Optionnel.
+/// @param {Length|Null} $radius - Arrondies de bordure (coins arrondis). Optionnel.
+/// @param {Boolean} $isbordervisible - Si `true`, applique la bordure ; sinon, `border: none`. Par défaut : `false`.
+/// @group abstract
+/// @example scss - Bordure visible
+///   .box {
+///     @include border(#000, 2px, 8px, true);
+///   }
 @mixin border($color: null, $width: null, $radius: null, $isbordervisible: false) {
   @if $isbordervisible {
     border: solid $width $color;

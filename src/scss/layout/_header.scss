@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+
+///Défini le style du header
 .dashboard-header-container {
     grid-column: 3/13;
     grid-row: 1/2;
@@ -14,11 +16,13 @@
     }
 }
 
+///défini le style du menu burger
 .burger-menu {
     @include flex(column, 2px);
     cursor: pointer;
 }
 
+///Défini le style des points du menu burger
 .burger-menu-dot {
     @include dimension($width: 7px, $height: 7px);
     background-color: $input-color;

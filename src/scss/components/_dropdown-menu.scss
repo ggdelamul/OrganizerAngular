@@ -2,11 +2,15 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
+
+///Correspond à a zone vide où va se placer le menu 
 .dropdown-empty {
     height: 0;
     margin: 0;
     padding: 0;
 }
+
+
 .dropdown-container {
     @include dimension($width: 278px);
     position: absolute;
