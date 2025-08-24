@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-/// Applique des dimensions personnalisées à un élément, si elles sont définies.
+/// Applique des dimensions personnalisées à un élément, si elles sont définies
 /// Les valeurs nulles sont ignorées.
 /// @param {Length|Null} $height - La hauteur de l’élément (ex : `100px`, `auto`). Optionnel.
 /// @param {Length|Null} $width - La largeur de l’élément. Optionnel.
